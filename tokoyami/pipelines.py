@@ -10,7 +10,6 @@ class TokoyamiPipeline(ImagesPipeline):
 
     def get_media_requests(self, item, info):
         yield scrapy.Request(url=item["image_urls"], meta={"name": item["image_urls"].split("/")[-1], "book_name": item["image_names"]})
-        pass
 
     def file_path(self, request, response=None, info=None):
         name = request.meta.get("name")
